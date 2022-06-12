@@ -1,0 +1,49 @@
+#contact-us{
+    background-image: url(../img/unsplash-ryan-searle.jpg);
+    background-attachment: fixed;
+    background-size: contain no-repeat;
+    background-position: center;
+    @include fc-sta-cen;
+    padding-top:150px;
+    color:white;
+
+    form{
+        font-size: 14pt;
+        width:400px;
+        height:auto;
+        padding:20px;
+        color:white;
+        font-family: 'Mustica Pro';
+        @include fc-center();
+        @include white-border-card();
+        
+        fieldset{
+            @include fc-start;
+            border: none;
+            width:100%;
+            margin:0;
+            padding:0;
+        }
+        label{
+            font-size: 14pt;
+        }
+        input{
+            width:100%;
+            height:24px;
+            margin-bottom:10px;
+            opacity:0.7;
+        }
+        textarea{
+            display:flex;
+            flex:1 0 auto;
+            width:100%;
+            height:200px;
+            opacity:0.7;
+
+        }
+        :first-child{
+            margin-top:10px;
+        }
+    }
+ 
+}

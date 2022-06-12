@@ -1,0 +1,29 @@
+@mixin fr-center{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin fc-center{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@mixin fc-start{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+@mixin fc-sta-cen{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+@mixin white-border-card{
+    border:solid 4px white;
+    border-radius:8px;
+    background:linear-gradient(270deg, rgba(0, 0, 0, 0.7),30%, rgb(32, 31, 31));
+    box-shadow: -10px 0px 10px 10px rgba(0,0,0,0.3);
+}

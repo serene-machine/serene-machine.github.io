@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+    margin:0;   
+    padding:0; 
+    scroll-snap-type: y mandatory;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+section{
+    @include fr-center();
+    height:100vh;
+    min-height: 200px;
+    width:100vw;
+    flex: 1 0 auto;
+    scroll-snap-align: start;
+}
+
+#home{
+    background-image: url(../img/unsplash-ethan-rheams.jpg);
+    background-attachment: fixed;
+    background-size:  contain no-repeat;
+    background-position: center 45% ;
+    perspective: 300px;
+}
+.home-heading{
+    position:absolute;
+    top:35vh;
+    max-width:800px;
+    color:white;
+    font-family: 'Vezla';
+    font-size: clamp(24pt, 4vw, 38pt);
+    margin-left:10px;
+    text-align: center;
+    /* border:solid 1px pink; */
+}
+
