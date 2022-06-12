@@ -21,6 +21,12 @@
     justify-content: flex-start;
     align-items: center;
 }
+@mixin fr-sta-cen{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
 @mixin white-border-card{
     border:solid 4px white;
     border-radius:8px;

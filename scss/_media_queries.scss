@@ -4,11 +4,16 @@
     }
     #navbar{
         display:none;
+        ul{
+            display:none;
+            clip-path: none;
+        }
     }
     #burger-container{
         display:block;
+        cursor:pointer;
     }
-    .our-services{
+    #ourServices{
         @include fc-sta-cen;
         color:white;
         min-height: 100vh;
@@ -49,4 +54,25 @@
         height:auto;
         /* border:solid 1px white; */
     }
+    #contactUs{
+        form{
+            width:400px;
+            .flex{
+                flex-direction: column;
+            }
+            .customerMessage, .customerDetails{
+                width:100%;
+                padding:0;
+            }
+            .customerMessage{
+                min-height: 180px;
+            }
+            textarea{
+                resize: vertical;
+                max-width:100%;
+            }
+        }
+    }
+    
+   
 }

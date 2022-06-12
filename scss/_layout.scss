@@ -7,14 +7,32 @@
 a{
     text-decoration: none;
     color: inherit;
+    transition: 0.5s;
 }
 section{
     @include fr-center();
-    height:100vh;
-    min-height: 200px;
+    min-height:100vh;
+    padding-top:100px;
     width:100vw;
     flex: 1 0 auto;
-    scroll-snap-align: start;
+    // scroll-snap-align: start;
+}
+.section-header{
+    font-family: 'Vezla';
+    display:flex;
+    justify-content: center;
+    height:50px;
+    width:600px;
+    margin-bottom:20px;
+    // border:solid 1px green;
+    text-align: center;
+}
+.section-title{
+    font-size: clamp(24pt, 3vw, 38pt);
+
+}
+p, form, label, button{
+    font-size:clamp(12pt, 2vw, 14pt)
 }
 
 #home{

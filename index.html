@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rise Up Drones</title>
     <link rel="stylesheet" href="public/css/index.css">
-    <link rel="preload" href="EthnocentricRg-Italic.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="public/fonts/MusticaPro-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="public/fonts/MusticaPro-SemiBold.woff" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="public/fonts/Vezla.woff" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="public/fonts/Vezla.woff2" as="font" type="font/woff2" crossorigin>
+    <script src="public/js/jquery.js"></script>
     <script src="public/js/riseup.js"></script>
 </head>
 <body >
@@ -18,9 +18,9 @@
         <img src="public/img/ru-logo-v3-white-lettering.png" id="logo">
         <nav id="navbar">
             <ul>
-                <li><a href='' class='active-page'>Home</a></li>
-                <li><a href=''>Our services</a></li>
-                <li><a href=''>Contact Us</a></li>
+                <li><a id="homelink"href='#home' class='menulink active-page'>Home</a></li>
+                <li><a id="ourserviceslink"href='#ourServices' class="menulink">Our services</a></li>
+                <li><a id="contactuslink"href='#contactUs' class="menulink">Contact Us</a></li>
             </ul>
         </nav>
         <div id="burger-container">
@@ -36,7 +36,7 @@
     <section id="home">
         <h1 class="home-heading text-focus-in ">See the world with a different perspective</h1>
     </section>
-    <section class="our-services">
+    <section id="ourServices">
         <div class="section-header">
             <h2 class="section-title">Our services</h2>
         </div>
@@ -67,7 +67,7 @@
             <div class="service">
                 <h2 class="service-heading">Drone training</h2>
                 <div class="service-description">
-                    <p>Want to learn to fly drones? We can train you how to pilot a drone and teach you what you need to know to fly safely and legally.</p>
+                    <p>Do you want to fly drones yourself? We can train you to pilot a drone and teach you what you need to know to fly safely and legally.</p>
                 </div>
                 <div class="service-fees">
                 <p class="fees"> Flight training<br> <span class="red"><strong>$139 per hour</strong></span>
@@ -78,35 +78,40 @@
         <div></div>
         <!-- <div class="fade-out"></div> -->
     </section>
-    <section id="contact-us">
+    <section id="contactUs">
         <div class="section-header">
             <h2 class="section-title">Contact Us</h2>
         </div>
         <form action="">
-            Send us a message and we will get back to you asap.
-            <fieldset>
-                <label for="firstname">First name</label>
-                <input type="text" name="firstname" id="firstname">
-                <label for="surname">Surname</label>
-                <input type="text" name="surname" id="surname">
-            </fieldset>
-            <fieldset>
-                <label for="email">Email</label>
-                <input type="text" name="email" id="email">
-                <label for="phone">Phone (optional)</label>
-                <input type="text" name="phone" id="phone">
-            </fieldset>
-            <fieldset>
-                <label for="message">Message</label>
-                <textarea type="text" name="message" id="message"></textarea>
-            </fieldset>
+            Send us a message and we will get back to you as soon as possible.
+            <div class="flex">
+                <fieldset class="customerDetails">
+                    <label id="firstnamelabel" for="firstname">First name</label>
+                    <input type="text" name="firstname" id="firstname">
+                    <label for="surname">Surname</label>
+                    <input type="text" name="surname" id="surname">
+                    <label for="orgname">Organisation name (optional)</label>
+                    <input type="text" name="orgname" id="orgname">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email">
+                    <label for="phone">Phone (optional)</label>
+                    <input type="text" name="phone" id="phone">
+                </fieldset>
+                <fieldset class="customerMessage">
+                    <label for="message">Message</label>
+                    <textarea type="text" name="message" id="message"></textarea>
+                </fieldset>
+            </div>
+            
+            
+            <button type="submit">Send</button>
         </form>
     </section>
     <div class="" id="burger-menu">
         <ul id="burger-menu-list">
-            <li><a href='index.html' class='active-page'>Home</a></li>
-            <li><a href='our-services.html'>Our services</a></li>
-            <li><a href='contact-us.html'>Contact Us</a></li>
+            <li><a id="bm-home" class='burger-menu-link'>Home</a></li>
+            <li><a id="bm-ourservices" class="burger-menu-link">Our services</a></li>
+            <li><a id="bm-contactus" class="burger-menu-link">Contact Us</a></li>
         </ul>
 </div>  
 </body>
