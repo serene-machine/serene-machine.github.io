@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self';"/>
+    <title>Rise Up Drones</title>
+    <link rel="stylesheet" href="public/index.css">
+    <link rel="preload" href="fonts/MusticaPro-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/MusticaPro-SemiBold.woff" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Vezla.woff" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Vezla.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <script src="public/js/jquery.js"></script>
+    <script src="public/js/riseup.js"></script>
+</head>
+<body>
+    <header>
+        <img src="public/img/ru-logo-v3-white-lettering.png" id="logo">
+        <nav id="navbar">
+            <ul>
+                <li><a id="homelink"href='#home' class='menulink active-page headg'>Home</a></li>
+                <li><a id="ourserviceslink"href='#ourServices' class="menulink">Our services</a></li>
+                <li><a id="contactuslink"href='#contactUs' class="menulink">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div id="burger-container">
+            <div id="burger">
+                <span>&nbsp;</span>
+                <span>&nbsp;</span>
+                <span>&nbsp;</span>
+                <span>&nbsp;</span>
+            </div>
+        </div>
+    </header>
+    <section id="home">
+        <div class="intro">
+            <h1>See the world with a <span class="red">different</span> perspective</h1>
+            <button class="intro-button">Hire a pilot</button>
+        </div>
+        
+    </section>
+    <div id="ourservices">
+        
+        <section id="prop_film">
+            <span class="card os_card">
+                <h3 class="card-header">
+                    Property filming
+                </h3>
+                <div class="card-descr">
+                    Showcase properties with exhilirating footage
+                </div>
+                <div class="fees">
+                    <div class="red">
+                        Property filming
+                    </div>
+                    <div class="fee">
+                        $249 per 250m<sup>2</sup> land area
+                    </div>
+                </div>
+            </span>
+        </section>
+        <section id="survey">
+            <span class="card os_card">
+                <h3 class="card-header">
+                    Surveys
+                </h3>
+                <div class="card-descr">
+                    Need an eye-in-the-sky to survey hard 
+                    to reach areas or large regions? 
+                    Contact us to discuss solutions 
+                    to any surveying needs you have.
+                </div>
+                <div class="fees">
+                    <div class="red">
+                        Drone and pilot hire
+                    </div>
+                    <div class="fee">
+                        $139 per hour
+                    </div>
+                    <div class="red">
+                        Data/video analysis and processing
+                    </div>
+                    <div class="fee">
+                        $89 per hour
+                    </div>
+                </div>
+            </span>
+        </section>
+        
+        <section id="training">
+            <span class="card os_card">
+                <h3 class="card-header">
+                    Drone training
+                </h3>
+                <div class="card-descr">
+                    Do you want to fly drones yourself? 
+                    We can train you to pilot a drone and 
+                    teach you what you need to know to 
+                    fly safely and legally.
+                </div>
+                <div class="fees">
+                    <div class="red">
+                        Flight training
+                    </div>
+                    <div class="fee">
+                        $139 per hour
+                    </div>
+                    <div class="red">
+                        Ground training
+                    </div>
+                    <div class="fee">
+                        $89 per hour
+                    </div>
+                </div>
+            </span>
+        </section>
+    </div>
+    <section id="contact">
+        <form class="card" action="/public/messageConfirmation.html" method="POST" name="riseup_contactform" netlify>
+            Send us a message and we will get back to you as soon as possible.
+                <fieldset class="customerDetails">
+                    <label id="firstnamelabel" for="firstname">First name<span class="red">*</span></label>
+                    <input type="text" name="firstname" id="firstname" pattern="[A-Za-z]+" required>
+                    <label for="surname">Surname<span class="red">*</span></label>
+                    <input type="text" name="surname" id="surname" pattern="[A-Za-z]+" required>
+                    <label for="orgname">Organisation</label>
+                    <input type="text" name="orgname" id="orgname">
+                    <label for="email">Email<span class="red">*</span></label>
+                    <input type="text" name="email" id="email" required>
+                    <label for="phone">Phone</label>
+                    <input type="text" name="phone" id="phone">
+                </fieldset>
+                <fieldset class="customerMessage">
+                    <label for="message">Message</label>
+                    <textarea type="text" name="message" id="message" required></textarea>
+                </fieldset>
+                <button type="submit">Send</button>
+            </form>   
+    </section>
+    
+    <footer>
+        <div class="footer-lists-container">
+            <div class="footer-list">
+                <div class="footer-list-header">About</div>
+                <ul>
+                    <li>Property Promo</li>
+                    <li>Image Credits</li>
+                </ul>
+            </div>
+            <div class="footer-list">
+                <div class="footer-list-header">Follow</div>
+                <ul>
+                    <li>Twitter</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">Logo and website design &#169 Rise Up Drones</div>
+    </footer>
+    <div class="" id="burger-menu">
+        <ul id="burger-menu-list">
+            <li><a id="bm-home" class='burger-menu-link'>Home</a></li>
+            <li><a id="bm-ourservices" class="burger-menu-link">Our services</a></li>
+            <li><a id="bm-contactus" class="burger-menu-link">Contact Us</a></li>
+        </ul>
+    </div> 
+</body>
+</html>

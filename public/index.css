@@ -1,0 +1,419 @@
+@font-face {
+  font-family: "Good Times Rg";
+  src: url("fonts/GoodTimesRg-Regular.woff2") format("woff2"), url("fonts/GoodTimesRg-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Techna Sans";
+  src: url("fonts/TechnaSans-Regular.woff2") format("woff2"), url("fonts/TechnaSans-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  color: #FFF;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+}
+
+section, footer {
+  scroll-snap-align: start;
+}
+
+header, section, footer {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+section {
+  width: 100vw;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.card-header, header ul li, #burger-menu-link {
+  font-size: clamp(14pt, 3vw, 16pt);
+}
+
+.card, form, label, .intro-button {
+  font-size: clamp(12pt, 2vw, 14pt);
+}
+
+footer, footer ul li, button {
+  font-size: clamp(10pt, 1.4vw, 12pt);
+}
+
+.copyright {
+  font-size: 8pt;
+}
+
+.card-header, header ul li, h1, h2, h3, .burger-menu-link {
+  font-family: "Good Times Rg", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card, form, label, footer, footer ul li, button {
+  font-family: "Techna Sans", "Gill Sans", Calibri, sans-serif;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  color: white;
+  font-family: "Techna Sans";
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.red {
+  color: #c50000;
+}
+
+a:hover, .active-page, #burger-menu-list li:hover, .gradient {
+  background: linear-gradient(360deg, #c50000, rgb(255, 81, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+button {
+  transition: background-color 0.1s linear;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #c50000;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  align-self: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  z-index: 10;
+}
+header #logo {
+  height: 80px;
+  width: auto;
+}
+header nav {
+  text-align: center;
+}
+header ul {
+  display: inline;
+  text-align: center;
+  height: 20px;
+}
+header li {
+  display: inline;
+  font-family: "Vezla";
+  white-space: nowrap;
+  padding: 5px 15px;
+  margin-left: 10px;
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#burger-container {
+  display: none;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  z-index: 11;
+  /* border:solid 1px red; */
+}
+
+#burger {
+  cursor: pointer;
+  display: block;
+  top: 10px;
+  /* margin-top: 20px; */
+  /* margin-right:10px; */
+  /* border:solid 1px red; */
+}
+
+#burger span {
+  background: #eee;
+  display: block;
+  width: 48px;
+  height: 6px;
+  margin-bottom: 6px;
+  position: relative;
+  top: 0;
+  transition: all ease-in-out 0.4s;
+}
+
+#burger-container.open span:nth-child(2),
+#burger-container.open span:nth-child(3) {
+  width: 0;
+  opacity: 0;
+}
+
+#burger-container.open span:nth-child(4) {
+  transform: rotate(45deg);
+  top: -18px;
+}
+
+#burger-container.open span:nth-child(1) {
+  transform: rotate(-45deg);
+  top: 18px;
+}
+
+#burger-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: ease-in 0.2s;
+  /* border:solid 1px red; */
+}
+
+.burger-menu-width {
+  width: 100vw !important;
+  height: auto;
+  z-index: 10;
+}
+
+#burger-menu-list {
+  height: auto;
+  padding: 0;
+  z-index: 15;
+  background-color: transparent;
+}
+
+#burger-menu-list li {
+  display: block;
+  color: white;
+  margin-bottom: 5px;
+  cursor: pointer;
+  /* border:solid 1px white; */
+}
+
+#home {
+  background-image: url(img/home_m.jpg);
+  justify-content: center;
+  align-items: center;
+}
+
+.intro {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.intro h1 {
+  text-shadow: 2px 2px 4px #000;
+}
+
+.intro-button {
+  width: auto;
+  padding: 8px;
+  border-radius: 20px;
+  margin-top: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: solid 2px white;
+  color: white;
+  text-shadow: 2px 2px 4px #000;
+}
+
+#ourservices {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#prop_film {
+  background-image: url(img/prop_film_m.jpg);
+}
+
+#survey {
+  background-image: url(img/survey_m.jpg);
+}
+
+#training {
+  background-image: url(img/training_m.jpg);
+}
+
+.card-header {
+  text-align: left;
+  color: #c50000;
+}
+
+.os_card {
+  margin-bottom: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: auto;
+  width: 350px;
+}
+
+.card-descr, .fees {
+  margin-top: 10px;
+}
+
+#contact {
+  background-image: url(img/contact_m.jpg);
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+#contact button {
+  width: 60px;
+  height: 30px;
+  background-color: white;
+  color: #000;
+  transition: background-color 0.2s ease-in;
+  border: none;
+  margin-top: 20px;
+  border-radius: 3px;
+}
+#contact button:hover {
+  background-color: #c50000;
+}
+
+form, fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+form {
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+}
+
+fieldset, input, textarea, label {
+  width: 100%;
+  border: none;
+}
+
+label {
+  margin-top: 5px;
+  text-align: left;
+}
+
+input {
+  height: 25px;
+  border-radius: 3px;
+  color: #FFF;
+}
+
+input, textarea {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 6px;
+}
+
+textarea {
+  height: 140px;
+  resize: vertical;
+}
+
+footer {
+  min-height: 200px;
+  height: auto;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #2c2c2c;
+  font-family: "Techna Sans";
+}
+footer li {
+  list-style: none;
+}
+
+.footer-lists-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  flex: 1 0 auto;
+}
+
+.footer-list {
+  padding: 20px;
+}
+
+.footer-list-header {
+  color: #c50000;
+}
+
+.copyright {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1000px) {
+  nav {
+    display: none;
+  }
+
+  #burger-container {
+    display: inline-block;
+  }
+
+  header, footer, section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .card, form {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    max-width: 300px;
+  }
+}
+@media (max-width: 640px) {
+  section {
+    justify-content: center;
+    align-items: center;
+  }
+
+  header #logo {
+    height: 60px;
+  }
+}

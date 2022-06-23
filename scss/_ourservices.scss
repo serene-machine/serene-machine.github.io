@@ -1,0 +1,33 @@
+#ourservices{
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+#prop_film{
+    background-image: url(img/prop_film_m.jpg);
+}
+#survey{
+    background-image: url(img/survey_m.jpg);
+}
+#training{
+    background-image: url(img/training_m.jpg);
+}
+.card-header{
+    text-align: left;
+    color:$activered;
+}
+.os_card{
+    margin-bottom:$outerMargin;
+    padding:$outerMargin;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height:auto;
+    width:350px;
+}
+.card-descr, .fees{
+    margin-top:10px;
+    // font-size: 12pt;
+}

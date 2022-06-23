@@ -1,0 +1,32 @@
+@media (max-width:1000px){
+    
+    nav{
+        display:none;
+    }
+    #burger-container{
+        display:inline-block;
+    }
+    header, footer, section{
+        padding-left:24px;
+        padding-right:24px;
+    }
+    .card, form{
+        background-color: rgba(0,0,0,0.7);
+        width:100%;
+        max-width: 300px;
+    }
+
+}
+@media (max-width:640px){
+    section{
+        justify-content:center;
+        align-items: center;
+    }
+    header{
+        #logo{
+            height:60px;
+        }
+    }
+    
+}
+

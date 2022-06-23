@@ -1,0 +1,49 @@
+*{
+    color:#FFF;
+    padding:0;
+    margin:0;
+    background-color: transparent;
+    box-sizing: border-box;
+    // line-height: 0;
+}
+
+html, body{
+    width:100vw;
+    height:100vh;
+    scroll-snap-type: y mandatory;
+}
+section, footer{
+    scroll-snap-align: start;
+}
+header, section, footer{
+    padding-left: $windowMargin;
+    padding-right: $windowMargin;
+}
+section{
+    width:100vw;
+    min-height:100vh;
+    background-size: cover;
+    background-position: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.card-header, header ul li, #burger-menu-link{
+    font-size:clamp(14pt, 3vw, 16pt);
+}
+.card, form, label, .intro-button{
+    font-size:clamp(12pt, 2vw, 14pt);
+}
+footer, footer ul li, button{
+    font-size:clamp(10pt, 1.4vw, 12pt);
+}
+.copyright{
+    font-size:8pt;
+}
+.card-header, header ul li, h1, h2, h3, .burger-menu-link{
+    font-family: 'Good Times Rg',Verdana, Geneva, Tahoma, sans-serif;;
+}
+.card, form, label, footer, footer ul li, button{
+    font-family: 'Techna Sans', 'Gill Sans',Calibri, sans-serif, ;
+}

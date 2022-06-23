@@ -1,0 +1,33 @@
+footer{
+    min-height:200px;
+    height:auto;
+    width:100vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    padding-left:$windowMargin;
+    padding-right:$windowMargin;
+    background-color: $bgblack;
+    font-family: 'Techna Sans';
+    li{
+        list-style: none;  
+    }
+}
+.footer-lists-container{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    flex:1 0 auto;
+}
+.footer-list{
+    padding:$outerMargin;
+}
+.footer-list-header{
+    color:$activered;
+}
+.copyright{
+    text-align: center;
+    margin-bottom: 20px;
+}

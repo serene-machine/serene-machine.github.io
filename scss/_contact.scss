@@ -1,0 +1,56 @@
+#contact{
+    background-image: url(img/contact_m.jpg);
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    button{
+        width:60px;
+        height:30px;
+        background-color: white;
+        color:#000;
+        transition:background-color 0.2s ease-in;
+        border:none;
+        margin-top:20px;
+        border-radius:3px;
+    }
+    button:hover{
+        background-color: $activered;
+    }
+}
+
+form, fieldset{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:none;
+}
+form{
+    width:300px;
+    padding:20px;
+    text-align: center;
+}
+fieldset, input, textarea, label{
+    width:100%;
+    border:none;
+}
+label{
+    margin-top:5px;
+    text-align: left;
+}
+input{
+    height:25px;
+    border-radius: 3px;
+    color:#FFF;
+}
+
+input, textarea{
+    background-color: rgba(0,0,0,0.8);
+    padding:6px;
+}
+textarea{
+    height:140px;
+    resize: vertical;
+}
+
+
