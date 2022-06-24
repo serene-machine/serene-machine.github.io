@@ -29,7 +29,7 @@ section{
     justify-content: flex-end;
     align-items: flex-end;
 }
-.card-header, header ul li, #burger-menu-link{
+.card-header, header ul li, #burger-menu-link, #burger-menu-list li{
     font-size:clamp(14pt, 3vw, 16pt);
 }
 .card, form, label, .intro-button{

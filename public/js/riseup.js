@@ -2,88 +2,116 @@
 window.onload = function () {
 
   const menulinks = document.querySelectorAll('.menulink')
-  const homelink = document.getElementById('homelink')
-  const ourserviceslink = document.getElementById('ourserviceslink')
-  const contactuslink = document.getElementById('contactuslink')
+  const ourservices = document.getElementById('ourservices')
+  const contact = document.getElementById('contact')
   const home = document.getElementById('home')
-  const ourServices = document.getElementById('ourServices')
-  const contactUs = document.getElementById('contactUs')
+  const ourserviceslink = document.getElementById('ourserviceslink')
+  const contactlink = document.getElementById('contactlink')
+  const homelink = document.getElementById('homelink')
+  const burgerLinks = document.getElementsByClassName('burger-menu-link')
+
+  
 
   document.getElementById('burger-container').addEventListener('click', function () {
     this.classList.toggle('open');
     openCloseNav();
   });
 
-  const burgerLinks = document.getElementsByClassName('burger-menu-link')
+  window.onresize = function(){
+    getHeights();
+    getHalfHeights();
+    if (window.innerWidth > 1000) {  closeBurgerMenu() }
+  };
+  window.addEventListener('scroll', ()=>{
+    changeActiveLinkColor();
+  });
+          
+  getHeights();
+  getHalfHeights();
+
+
+  //This is for controlling the burger menu
   Array.from(burgerLinks).forEach(link => {
     link.addEventListener('click', function (e) {
       switch (e.target.id) {
         case 'bm-home':
           openCloseNav()
           animateBurger()
-          scrollTo(homelink)
+          scrollTo(link, true)
           break;
         case 'bm-ourservices':
           openCloseNav()
           animateBurger()
-          scrollTo(ourserviceslink)
+          scrollTo(link, true)
           break;
-        case 'bm-contactus':
+        case 'bm-contact':
           openCloseNav()
           animateBurger()
-          scrollTo(contactuslink)
+          
+          scrollTo(link, true)
           break;
         default:
           break;
       }
     })
-  })
-
-  function scrollTo(link){
-    $('section').css("scroll-snap-align", "none")
-    changeActive(link);
+  });
+  console.log(menulinks)
+  menulinks.forEach(link => {
+    link.addEventListener('click', (link)=>{
+      scrollTo(link.target, false);
+    });
+  });
+  function scrollTo(link, isitaburgerlink){
+    $('section, footer').css("scroll-snap-align", "none")
+    if(isitaburgerlink === false){
+      changeActive(link);
+    }
     $('html').animate({
         scrollTop: $($.attr(link, 'href')).offset().top
     }, 500, () =>{
-      $('section').css("scroll-snap-align", "start")
+      $('section, footer').css("scroll-snap-align", "start")
     });
-  }
-  function animateBurger() {
-    document.getElementById('burger-container').classList.toggle('open');
-  }
-  function openCloseNav() {
-    document.getElementById("burger-menu").classList.toggle('burger-menu-width');
-  }
-  function getHeights(){
-    let homeHeight = home.offsetTop
-    let ourServicesHeight = ourServices.offsetTop
-    let contactusHeight = contactUs.offsetTop
-  }
-  function getHalfHeights(){
-    halfwindowHeight = $(window).height() / 2
-    halfwayToOurServices = $('#ourServices').offset().top - halfwindowHeight;
-    halfwayToContactUs = $('#contactUs').offset().top - halfwindowHeight;
-  }
+  };
   function changeActive(element){
+    // console.log('changing Active')
     menulinks.forEach(link => {
+      // console.log(link)
         link.classList.remove('active-page')
     })
+    // console.log(element)
     element.classList.add('active-page')
-  }
+  };
   function changeActiveLinkColor(){
     let scrollPos = $(window).scrollTop();
     if(scrollPos < halfwayToOurServices  ) changeActive(homelink)
-    if(scrollPos >= halfwayToOurServices && scrollPos <  halfwayToContactUs ) changeActive(ourserviceslink)
-    if(scrollPos >= halfwayToContactUs ) changeActive(contactuslink)
+    if(scrollPos >= halfwayToOurServices && scrollPos <  halfwayTocontact ) changeActive(ourserviceslink)
+    if(scrollPos >= halfwayTocontact ) changeActive(contactlink)
+  };
+
+
+  function animateBurger() {
+    document.getElementById('burger-container').classList.toggle('open');
+  };
+  function closeBurgerMenu(){
+    document.getElementById("burger-menu").classList.remove('burger-menu-width');
+    document.getElementById('burger-container').classList.remove('open');
+
   }
-  window.onresize = function(){
-    getHeights();
-    getHalfHeights()
-  } 
-  window.addEventListener('scroll', ()=>{
-    changeActiveLinkColor()
-  });
-  getHeights();
-  getHalfHeights()
+  function openCloseNav() {
+        document.getElementById("burger-menu").classList.toggle('burger-menu-width');
+      };
+  function getHeights(){
+    let homeHeight = home.offsetTop;
+    let ourServicesHeight = ourservices.offsetTop;
+    let contactHeight = contact.offsetTop;
+  };
+  function getHalfHeights(){
+        halfwindowHeight = $(window).height() / 2
+        halfwayToOurServices = $('#ourservices').offset().top - halfwindowHeight;
+        halfwayTocontact = $('#contact').offset().top - halfwindowHeight;
+      };
+  
 
 };
+  
+

@@ -47,7 +47,7 @@ section {
   align-items: flex-end;
 }
 
-.card-header, header ul li, #burger-menu-link {
+.card-header, header ul li, #burger-menu-link, #burger-menu-list li {
   font-size: clamp(14pt, 3vw, 16pt);
 }
 
@@ -89,8 +89,8 @@ a {
   color: #c50000;
 }
 
-a:hover, .active-page, #burger-menu-list li:hover, .gradient {
-  background: linear-gradient(360deg, #c50000, rgb(255, 81, 0));
+a:hover, #burger-menu-list li:hover, .gradient, .active-page {
+  background: linear-gradient(360deg, #c50000, #ff5100);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -219,6 +219,7 @@ header li {
   display: block;
   color: white;
   margin-bottom: 5px;
+  padding: 20px;
   cursor: pointer;
   /* border:solid 1px white; */
 }

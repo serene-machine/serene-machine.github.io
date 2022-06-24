@@ -13,7 +13,7 @@ a{
 .red{
     color:$activered;
 }
-a:hover, .active-page, #burger-menu-list li:hover, .gradient{
+a:hover,  #burger-menu-list li:hover, .gradient , .active-page {
     background:$gradientRed;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
