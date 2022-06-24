@@ -51,7 +51,7 @@ section {
   font-size: clamp(14pt, 3vw, 16pt);
 }
 
-.card, form, label, .intro-button {
+p, .card, form, label, .intro-button {
   font-size: clamp(12pt, 2vw, 14pt);
 }
 
@@ -67,8 +67,13 @@ footer, footer ul li, button {
   font-family: "Good Times Rg", Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.card, form, label, footer, footer ul li, button {
+p, .card, form, label, footer, footer ul li, button, .ts_and_cs {
   font-family: "Techna Sans", "Gill Sans", Calibri, sans-serif;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
 }
 
 .card {
@@ -242,7 +247,7 @@ header li {
   text-shadow: 2px 2px 4px #000;
 }
 
-.intro-button {
+.pill-button {
   width: auto;
   padding: 8px;
   border-radius: 20px;
@@ -391,8 +396,27 @@ footer li {
   margin-bottom: 20px;
 }
 
+.blackpage {
+  background-color: #2c2c2c;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 110px;
+}
+.blackpage h1, .blackpage h2, .blackpage h3, .blackpage p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.blackpage .pill-button {
+  display: flex;
+  align-self: center;
+}
+
 @media (max-width: 1000px) {
-  nav {
+  #navbar {
     display: none;
   }
 
