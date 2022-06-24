@@ -55,7 +55,6 @@ window.onload = function () {
       }
     })
   });
-  console.log(menulinks)
   menulinks.forEach(link => {
     link.addEventListener('click', (link)=>{
       scrollTo(link.target, false);
@@ -73,12 +72,9 @@ window.onload = function () {
     });
   };
   function changeActive(element){
-    // console.log('changing Active')
     menulinks.forEach(link => {
-      // console.log(link)
         link.classList.remove('active-page')
     })
-    // console.log(element)
     element.classList.add('active-page')
   };
   function changeActiveLinkColor(){
