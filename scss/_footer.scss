@@ -13,6 +13,11 @@ footer{
     li{
         list-style: none;  
     }
+    a:hover {
+        background:$gradientRed;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 }
 .footer-lists-container{
     display:flex;

@@ -2,7 +2,6 @@
     background-color: rgba(0,0,0,0.6);
     border-radius: 5px;
     color:white;
-    font-family: 'Techna Sans';
     box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
 }
 a{
@@ -14,7 +13,7 @@ a{
 .red{
     color:$activered;
 }
-a:hover,  #burger-menu-list li:hover, .gradient , .active-page {
+ #burger-menu-list li:hover, .gradient , .active-page {
     background:$gradientRed;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -29,4 +28,19 @@ button{
 }
 button:hover{
     background-color: $activered;
+}
+.pill-button{
+    width:auto;
+    padding:8px;
+    border-radius:20px;
+    margin-top:20px;
+    background-color:rgba(0,0,0,0.3);
+    border:solid 2px #ffffff;
+    color:#ffffff;
+    text-shadow: 2px 2px 4px #000;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+}
+.pill-button:hover{
+    background-color: $activered;
+    color:#ffffff;
 }

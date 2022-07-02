@@ -1,54 +1,104 @@
-*{
-    color:#FFF;
-    padding:0;
-    margin:0;
+* {
+    color: #FFF;
+    padding: 0;
+    margin: 0;
     background-color: transparent;
     box-sizing: border-box;
-    // line-height: 0;
 }
 
-html, body{
-    width:100vw;
-    height:100vh;
+html {
+    font-size: 16px;
+    overflow-x: hidden;
+}
+body{
+    font-size: 62.5%;
+}
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.snap {
     scroll-snap-type: y mandatory;
 }
-section, footer{
+
+section,
+footer {
     scroll-snap-align: start;
 }
-header, section, footer{
+
+header,
+section,
+footer {
     padding-left: $windowMargin;
     padding-right: $windowMargin;
 }
-section{
-    width:100vw;
-    min-height:100vh;
+
+section {
+    width: 100vw;
+    min-height: 100vh;
     background-size: cover;
     background-position: center;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
 }
-.card-header, header ul li, #burger-menu-link, #burger-menu-list li{
-    font-size:clamp(14pt, 3vw, 16pt);
-}
-p, .card, form, label, .intro-button{
-    font-size:clamp(12pt, 2vw, 14pt);
-}
-footer, footer ul li, button{
-    font-size:clamp(10pt, 1.4vw, 12pt);
-}
-.copyright{
-    font-size:8pt;
-}
-.card-header, header ul li, h1, h2, h3, .burger-menu-link{
-    font-family: 'Good Times Rg',Verdana, Geneva, Tahoma, sans-serif;;
-}
-p, .card, form, label, footer, footer ul li, button, .ts_and_cs{
-    font-family: 'Techna Sans', 'Gill Sans',Calibri, sans-serif, ;
+
+#intro_line {
+    font-size: clamp(2rem, 1.4vw + 1rem, 3rem);
+    // font-size: clamp(30pt, 1vw + 30pt, 40pt);
+
 }
 
-.flexCol{
-    display:flex;
+.card-header,
+header ul li,
+#burger-menu-link,
+#burger-menu-list li {
+    font-size: clamp(1.4rem, 0.2vw + 1.4rem, 2.4rem);
+}
+
+p,
+.card,
+form,
+label {
+    font-size: 1.2rem;
+}
+.pill-button{
+    font-size: 1.2rem;
+}
+footer,
+footer ul li {
+    font-size: 1.2rem;
+}
+
+.copyright {
+    font-size: 1rem;
+}
+
+.card-header,
+header ul li,
+h1,
+h2,
+h3,
+.burger-menu-link {
+    font-family: 'Good Times Rg', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p,
+.card,
+form,
+label,
+footer,
+footer ul li,
+button,
+.pill-button,
+.ts_and_cs {
+    font-family: 'Techna Sans', 'Gill Sans', sans-serif, ;
+}
+
+.flexCol {
+    display: flex;
     flex-direction: column;
 }

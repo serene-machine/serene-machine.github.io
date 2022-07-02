@@ -20,18 +20,34 @@
   box-sizing: border-box;
 }
 
-html, body {
+html {
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+body {
+  font-size: 62.5%;
+}
+
+html,
+body {
   width: 100vw;
   height: 100vh;
+}
+
+.snap {
   -ms-scroll-snap-type: y mandatory;
       scroll-snap-type: y mandatory;
 }
 
-section, footer {
+section,
+footer {
   scroll-snap-align: start;
 }
 
-header, section, footer {
+header,
+section,
+footer {
   padding-left: 50px;
   padding-right: 50px;
 }
@@ -47,28 +63,56 @@ section {
   align-items: flex-end;
 }
 
-.card-header, header ul li, #burger-menu-link, #burger-menu-list li {
-  font-size: clamp(14pt, 3vw, 16pt);
+#intro_line {
+  font-size: clamp(2rem, 1.4vw + 1rem, 3rem);
 }
 
-p, .card, form, label, .intro-button {
-  font-size: clamp(12pt, 2vw, 14pt);
+.card-header,
+header ul li,
+#burger-menu-link,
+#burger-menu-list li {
+  font-size: clamp(1.4rem, 0.2vw + 1.4rem, 2.4rem);
 }
 
-footer, footer ul li, button {
-  font-size: clamp(10pt, 1.4vw, 12pt);
+p,
+.card,
+form,
+label {
+  font-size: 1.2rem;
+}
+
+.pill-button {
+  font-size: 1.2rem;
+}
+
+footer,
+footer ul li {
+  font-size: 1.2rem;
 }
 
 .copyright {
-  font-size: 8pt;
+  font-size: 1rem;
 }
 
-.card-header, header ul li, h1, h2, h3, .burger-menu-link {
+.card-header,
+header ul li,
+h1,
+h2,
+h3,
+.burger-menu-link {
   font-family: "Good Times Rg", Verdana, Geneva, Tahoma, sans-serif;
 }
 
-p, .card, form, label, footer, footer ul li, button, .ts_and_cs {
-  font-family: "Techna Sans", "Gill Sans", Calibri, sans-serif;
+p,
+.card,
+form,
+label,
+footer,
+footer ul li,
+button,
+.pill-button,
+.ts_and_cs {
+  font-family: "Techna Sans", "Gill Sans", sans-serif;
 }
 
 .flexCol {
@@ -80,7 +124,6 @@ p, .card, form, label, footer, footer ul li, button, .ts_and_cs {
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 5px;
   color: white;
-  font-family: "Techna Sans";
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
 }
 
@@ -95,7 +138,7 @@ a {
   color: #c50000;
 }
 
-a:hover, #burger-menu-list li:hover, .gradient, .active-page {
+#burger-menu-list li:hover, .gradient, .active-page {
   background: linear-gradient(360deg, #c50000, #ff5100);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -110,6 +153,23 @@ button:hover {
   background-color: #c50000;
 }
 
+.pill-button {
+  width: auto;
+  padding: 8px;
+  border-radius: 20px;
+  margin-top: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: solid 2px #ffffff;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px #000;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+.pill-button:hover {
+  background-color: #c50000;
+  color: #ffffff;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -121,13 +181,12 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-left: 50px;
-  padding-right: 50px;
   z-index: 10;
 }
 header #logo {
   height: 80px;
   width: auto;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.6));
 }
 header nav {
   text-align: center;
@@ -147,6 +206,11 @@ header li {
   background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
 }
+header a:hover {
+  background: linear-gradient(360deg, #c50000, #ff5100);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 #burger-container {
   display: none;
@@ -154,6 +218,7 @@ header li {
   width: 48px;
   height: 48px;
   z-index: 11;
+  padding-right: 50px;
   /* border:solid 1px red; */
 }
 
@@ -245,18 +310,7 @@ header li {
 }
 .intro h1 {
   text-shadow: 2px 2px 4px #000;
-}
-
-.pill-button {
-  width: auto;
-  padding: 8px;
-  border-radius: 20px;
-  margin-top: 20px;
-  background-color: rgba(0, 0, 0, 0.3);
-  border: solid 2px white;
-  color: white;
-  text-shadow: 2px 2px 4px #000;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+  margin: 0;
 }
 
 #ourservices {
@@ -305,8 +359,8 @@ header li {
   padding-top: 20px;
 }
 #contact button {
-  width: 60px;
-  height: 30px;
+  width: 80px;
+  height: 40px;
   background-color: white;
   color: #000;
   transition: background-color 0.2s ease-in;
@@ -327,14 +381,17 @@ form, fieldset {
 }
 
 form {
-  width: 300px;
-  padding: 20px;
-  text-align: center;
+  width: 400px;
+  padding: 20px 20px;
 }
 
 fieldset, input, textarea, label {
   width: 100%;
   border: none;
+}
+
+fieldset {
+  padding: 0rem;
 }
 
 label {
@@ -373,6 +430,11 @@ footer {
 }
 footer li {
   list-style: none;
+}
+footer a:hover {
+  background: linear-gradient(360deg, #c50000, #ff5100);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .footer-lists-container {
@@ -414,6 +476,17 @@ footer li {
   display: flex;
   align-self: center;
 }
+.blackpage .pill-button a:hover {
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+}
+.blackpage ul li {
+  font-size: 1.2rem;
+}
+
+.blackpage_link {
+  color: #f00;
+}
 
 @media (max-width: 1000px) {
   #navbar {
@@ -444,4 +517,4 @@ footer li {
   header #logo {
     height: 60px;
   }
-}
+}/*# sourceMappingURL=index.css.map */

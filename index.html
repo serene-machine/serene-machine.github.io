@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="snap">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self';"/>
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self';"/> -->
     <title>Rise Up Drones</title>
+    <link rel="stylesheet" href="public/normalize.css">
+
     <link rel="stylesheet" href="public/index.css">
+
     <link rel="preload" href="fonts/GoodTimesRg-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/GoodTimesRg-Regular.woff" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="fonts/TechnaSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/TechnaSans-Regular.woff" as="font" type="font/woff" crossorigin>
     <link rel="icon" type="image/x-icon" href="public/img/favicon.ico">
     <script src="public/js/jquery.js"></script>
-    <script src="public/js/riseup.js"></script>
+    <script src="public/js/riseup2.js"></script>
 </head>
-<body>
+<body >
     <header>
-        <img src="public/img/logov4/ru-logo-v4-whiteletters.png" id="logo">
+        <img src="public/img/logov4/ru-logo-v4-whiteletters.svg" id="logo">
         <nav id="navbar">
             <ul>
                 <li><a id="homelink"href='#home' class='menulink active-page'>Home</a></li>
@@ -36,8 +39,8 @@
     </header>
     <section id="home">
         <div class="intro">
-            <h1>See the world with a <span class="red">different</span> perspective</h1>
-            <button class="pill-button">Hire a pilot</button>
+            <h1 id="intro_line">See the world with a <span class="red">different</span> perspective</h1>
+            <button id="hirePilotBtn" href="#contact" class="pill-button">Hire a pilot</button>
         </div>
         
     </section>
@@ -140,13 +143,14 @@
             </form>   
     </section>
     
-    <footer>
+    <footer id="footer">
         <div class="footer-lists-container">
             <div class="footer-list">
                 <div class="footer-list-header">About</div>
                 <ul>
+                    <!-- <li><a href="/blog.html">Blog</a></li> -->
                     <li><a href="/propertypromo.html">Property Promo</a></li>
-                    <li>Image Credits</li>
+                    <li><a href="/image_credits.html">Image Credits</a></li>
                 </ul>
             </div>
             <div class="footer-list">

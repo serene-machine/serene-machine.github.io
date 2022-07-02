@@ -10,8 +10,6 @@ window.onload = function () {
   const homelink = document.getElementById('homelink')
   const burgerLinks = document.getElementsByClassName('burger-menu-link')
 
-  
-
   document.getElementById('burger-container').addEventListener('click', function () {
     this.classList.toggle('open');
     openCloseNav();
@@ -23,9 +21,12 @@ window.onload = function () {
     if (window.innerWidth > 1000) {  closeBurgerMenu() }
   };
   window.addEventListener('scroll', ()=>{
-    changeActiveLinkColor();
+    let scrollPos = $(window).scrollTop();
+    changeActiveLinkColor(scrollPos);
+    toggleScrollSnapping(scrollPos)
   });
-          
+     
+  
   getHeights();
   getHalfHeights();
 
@@ -71,19 +72,38 @@ window.onload = function () {
       $('section, footer').css("scroll-snap-align", "start")
     });
   };
+  //this toggles scroll snap type when the footer is reached, because
+  //it stops the links in the footer working properly
+  //It is called in the scroll event listener (~line 25)
+  function toggleScrollSnapping(scrollPos){
+    sum = scrollPos -  contact.offsetTop  
+    console.log(sum)
+    if(sum > 100 ){
+      document.documentElement.classList.remove('snap')
+    }else if(sum <= 100 ){
+      document.documentElement.classList.add('snap')
+    }
+  }
+
+  function getPosition(element) {
+    var clientRect = element.getBoundingClientRect();
+    return {left: clientRect.left + document.body.scrollLeft,
+            top: clientRect.top + document.body.scrollTop};
+  }
   function changeActive(element){
     menulinks.forEach(link => {
         link.classList.remove('active-page')
     })
     element.classList.add('active-page')
   };
-  function changeActiveLinkColor(){
-    let scrollPos = $(window).scrollTop();
+
+  //This changes the color of the main menu items, it is called in the 
+  //scroll event listener, line 27
+  function changeActiveLinkColor(scrollPos){
     if(scrollPos < halfwayToOurServices  ) changeActive(homelink)
     if(scrollPos >= halfwayToOurServices && scrollPos <  halfwayTocontact ) changeActive(ourserviceslink)
     if(scrollPos >= halfwayTocontact ) changeActive(contactlink)
   };
-
 
   function animateBurger() {
     document.getElementById('burger-container').classList.toggle('open');

@@ -14,5 +14,16 @@
     .pill-button{
         display:flex;
         align-self: center;
+        a:hover{
+            color:#fff;
+            -webkit-text-fill-color: #fff;
+        }
     }
+    ul li{
+        font-size: 1.2rem;
+    }
+    
+}
+.blackpage_link{
+    color:#f00
 }

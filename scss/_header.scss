@@ -9,13 +9,14 @@ header{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-left:$windowMargin;
-    padding-right:$windowMargin;
+    
     // background: rgba(0,0,0,0.5);
     z-index: 10;
     #logo{
         height:80px;
         width: auto;
+        filter: drop-shadow(5px 5px 5px  rgba(0,0,0,0.6));
+
 
     }
     nav{
@@ -36,5 +37,10 @@ header{
         background-color: rgba(0,0,0,0.5);
         box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
 
+    }
+    a:hover {
+        background:$gradientRed;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 }
